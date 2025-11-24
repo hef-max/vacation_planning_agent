@@ -95,7 +95,7 @@ For testing, use these payment tokens:
 └─────────────┘     └──────┬──────┘     └──────┬──────┘
                           │                    │
                     ┌─────▼─────┐        ┌─────▼─────┐
-                    │  SQLite   │        │ Gemini API│
+                    │  Postgre  │        │ Gemini API│
                     │    DB     │        │    LLM    │
                     └───────────┘        └───────────┘
 ```
@@ -104,11 +104,11 @@ For testing, use these payment tokens:
 
 | Component | Technology |
 |-----------|------------|
-| LLM | Gemini |
-| Agent | LangChain |
-| Backend | FastAPI + Uvicorn |
-| Database | SQLite |
-| Logging | Loguru |
+| LLM       | Gemini     |
+| Agent     | LangChain  |
+| Backend   | FastAPI + Uvicorn |
+| Database  | Postgre    |
+| Logging   | Loguru     |
 
 ## 📁 Project Structure
 
