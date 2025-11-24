@@ -85,7 +85,7 @@ const PlanningForm = ({ onPlanGenerated }) => {
                         value={destination}
                         onChange={(e) => setDestination(e.target.value)}
                         required
-                        className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm p-3 focus:ring-indigo-500 focus:border-indigo-500"
+                        className="mt-1 block w-full border text-gray-700 border-gray-300 rounded-lg shadow-sm p-3 focus:ring-indigo-500 focus:border-indigo-500"
                     />
                 </div>
 
@@ -118,7 +118,7 @@ const PlanningForm = ({ onPlanGenerated }) => {
                             value={startDate}
                             onChange={(e) => setStartDate(e.target.value)}
                             required
-                            className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm p-3"
+                            className="mt-1 block w-full text-gray-700 border border-gray-300 rounded-lg shadow-sm p-3"
                         />
                     </div>
                     <div className="flex-1">
@@ -129,7 +129,7 @@ const PlanningForm = ({ onPlanGenerated }) => {
                             value={endDate}
                             onChange={(e) => setEndDate(e.target.value)}
                             required
-                            className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm p-3"
+                            className="mt-1 block w-full text-gray-700 border border-gray-300 rounded-lg shadow-sm p-3"
                         />
                     </div>
                 </div>
@@ -143,7 +143,7 @@ const PlanningForm = ({ onPlanGenerated }) => {
                         onChange={(e) => setBudget(e.target.value)}
                         min="1000000"
                         required
-                        className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm p-3"
+                        className="mt-1 block text-gray-700 w-full border border-gray-300 rounded-lg shadow-sm p-3"
                     />
                 </div>
 

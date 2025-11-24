@@ -1,6 +1,6 @@
 # Vacation Planner - AI-Powered Travel Planning
 
-## Problem Definition
+## 1. Problem Definition
 
 Perusahaan meminta sebuah proof-of-concept (PoC) untuk membangun AI Vacation Planner yang mampu:
 
@@ -28,7 +28,7 @@ LLM bertindak sebagai Planner Agent, kemudian memanggil tools untuk:
 
 Agent menggunakan format function-calling sehingga LLM dapat memanggil fungsi Python secara otomatis berdasarkan kebutuhan.
 
-## 3. 3. High-Level Architecture
+## 3. High-Level Architecture
 ```bash
 ──────────────────────────────────────────────
                User Interface  
@@ -104,7 +104,7 @@ Jika user menambahkan:
 
 Maka agent memanggil booking_tool().
 
-## 6. Example Output
+## 5. Example Output
 Day 1:
 - Tiba di Bandara Ngurah Rai (estimasi 10.00)
 - Check-in: Amnaya Resort Kuta (Rp 850.000/malam)
@@ -116,33 +116,24 @@ Day 1:
 Estimasi total 3 hari: Rp 2.050.000  
 Booking: Siap dilakukan.
 
-## 7. Mock Data Structure
+## 6. Mock Data Structure
 
 Mock data mencakup:
 
-Destinasi
+Destinasi:
+- atraksi
+- harga tiket
+- cuaca per bulan
 
-atraksi
+Hotel:
+- harga
+- rating
+- fasilitas
 
-harga tiket
-
-cuaca per bulan
-
-Hotel
-
-harga
-
-rating
-
-fasilitas
-
-Transport
-
-harga pesawat
-
-durasi
-
-jarak hotel
+Transport:
+- harga pesawat
+- durasi
+- jarak hotel
 
 Data ini digunakan agar alur PoC terlihat seperti API nyata.
 
