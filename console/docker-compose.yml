@@ -1,0 +1,73 @@
+version: '3.9'
+services:
+  # 1. Database Service (Postgres)
+  db:
+    image: postgres:15-alpine
+    container_name: vacation-postgres
+    restart: always
+    env_file:
+      - ./.env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - vacation-network
+
+  # 2. API Service (FastAPI/LangChain)
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vacation-planner-api
+    env_file:
+      - ./.env
+    ports:
+      - "8000:8000"
+    environment:
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+      DATABASE_URL: ${DATABASE_URL}
+      LLM_BASE_URL: ${LLM_BASE_URL}
+      LLM_MODEL: ${LLM_MODEL}
+      APP_NAME: ${APP_NAME}
+      DEBUG: ${DEBUG}
+      REQUIRE_BOOKING_CONFIRMATION: ${REQUIRE_BOOKING_CONFIRMATION}
+      MAX_BUDGET_IDR: ${MAX_BUDGET_IDR}
+    volumes:
+      - api-data:/app/data
+      - api-logs:/app/logs
+    networks:
+      - vacation-network
+    restart: unless-stopped
+    # Hanya tergantung pada DB
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+# === Networks ===
+networks:
+  vacation-network:
+    driver: bridge
+
+# === Volumes ===
+volumes:
+  # KOREKSI: DEFINE VOLUME YANG TIDAK TERDEFINISI
+  postgres_data:
+    name: vacation-postgres-data
+  api-data:
+    name: vacation-planner-api-data
+  api-logs:
+    name: vacation-planner-api-logs

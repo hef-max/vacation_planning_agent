@@ -1,0 +1,49 @@
+{
+  "user_1": [
+    {
+      "id": "evt_001",
+      "title": "Team Meeting",
+      "start": "2025-12-22",
+      "end": "2025-12-22",
+      "type": "work"
+    },
+    {
+      "id": "evt_002",
+      "title": "Project Deadline",
+      "start": "2025-12-15",
+      "end": "2025-12-15",
+      "type": "work"
+    },
+    {
+      "id": "evt_003",
+      "title": "Family Event",
+      "start": "2025-12-25",
+      "end": "2025-12-26",
+      "type": "personal"
+    },
+    {
+      "id": "evt_004",
+      "title": "Work Conference",
+      "start": "2026-01-05",
+      "end": "2026-01-07",
+      "type": "work"
+    }
+  ],
+  "user_2": [
+    {
+      "id": "evt_101",
+      "title": "Dentist Appointment",
+      "start": "2025-12-18",
+      "end": "2025-12-18",
+      "type": "personal"
+    },
+    {
+      "id": "evt_102",
+      "title": "Birthday Party",
+      "start": "2025-12-31",
+      "end": "2025-12-31",
+      "type": "personal"
+    }
+  ],
+  "user_3": []
+}

@@ -1,0 +1,35 @@
+# === REVISED requirements.txt ===
+
+# FastAPI & Server (Versi stabil yang kompatibel dengan Pydantic v2)
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+
+# Database
+sqlalchemy==2.0.29
+aiosqlite==0.20.0
+psycopg2-binary==2.9.9  # Wajib untuk Postgres di Docker
+
+# LangChain & LLM Core (Versi yang lebih stabil dan mengatasi masalah ImportError)
+# Versi 0.1.x ke atas memiliki struktur modul yang berubah.
+langchain==0.2.0
+langchain-core # Biarkan Langchain menentukan versi ini (seharusnya 0.2.1)
+langchain-community==0.2.0
+
+# Utilities
+pydantic==2.7.2         # Versi yang diselaraskan dengan FastAPI/LangChain 0.2
+pydantic-settings==2.2.1
+python-dotenv==1.0.1
+httpx==0.27.0
+
+# Logging & Monitoring
+loguru==0.7.2
+
+# Testing
+pytest==8.2.0
+pytest-asyncio==0.23.5
+google-generativeai
+langchain-google-genai
+
+# Hapus:
+# langchain-ollama, ollama (karena Anda menggunakan llama.cpp di host)
